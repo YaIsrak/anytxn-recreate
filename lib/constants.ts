@@ -1,3 +1,6 @@
+import Frame1 from '@/public/backgrounds/frame1.jpg';
+import Frame2 from '@/public/backgrounds/frame2.jpg';
+import Frame3 from '@/public/backgrounds/frame3.jpg';
 import { CableIcon, CpuIcon, LightbulbIcon } from 'lucide-react';
 
 export const navLinks = [
@@ -44,5 +47,29 @@ export const philosophies = [
 		title: 'Cutting-edge tech',
 		content:
 			'We seamlessly combine cutting-edge technologies, resulting in an unparalleled fintech experience for financial institutions.',
+	},
+];
+
+export const technologies = [
+	{
+		image: Frame1,
+		subtitle: 'Customer focused',
+		title: 'Purpose-built financial services',
+		content:
+			'Elevate customer experience and achieve agile financial product innovation with the world’s first, consumer-centric, real-time transaction account processing and credit limit system.',
+	},
+	{
+		image: Frame2,
+		subtitle: 'Agile and Adaptable',
+		title: 'Powered by AI, Blockchain, and Cloud Computing',
+		content:
+			'Unleash the power of artificial intelligence, blockchain, and cloud computing to transform your financial operations and drive innovation',
+	},
+	{
+		image: Frame3,
+		subtitle: 'Compliance ready',
+		title: 'Manage compliance with ease',
+		content:
+			'Navigate through the evolving regulatory landscape with confidence by streamlining compliance management—through real-time risk monitoring solutions powered by AI and machine learning.',
 	},
 ];
