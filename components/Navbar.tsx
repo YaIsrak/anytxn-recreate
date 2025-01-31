@@ -28,7 +28,8 @@ export default function Navbar() {
 		<nav
 			className={cn(
 				'fixed w-full z-50 transition-all bg-primary lg:bg-white/0 text-white lg:text-black',
-				isScrolled && 'text-primary shadow-primary/10 shadow-lg bg-white',
+				isScrolled &&
+					'text-primary shadow-primary/10 shadow-lg bg-white lg:bg-white lg:text-primary',
 			)}>
 			<div className='container-section py-4 flex items-center justify-between'>
 				{/* Link */}
