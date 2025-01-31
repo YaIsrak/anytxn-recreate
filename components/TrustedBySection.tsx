@@ -1,4 +1,9 @@
+'use client';
+
+import { useInView } from 'motion/react';
 import Image from 'next/image';
+import { useRef, useState } from 'react';
+import { AnimatedNumber } from './ui/animated-number';
 import { Carousel, CarouselContent, CarouselItem } from './ui/carousel';
 
 export default function TrustedBySection() {
@@ -11,16 +16,19 @@ export default function TrustedBySection() {
 
 			<div className='flex flex-col lg:flex-row divide-y lg:divide-none divide-primary/50 divide-dashed'>
 				<List
-					title={'>20'}
-					value={'Years of Experience'}
+					icon='<'
+					title={20}
+					subtitle={'Years of Experience'}
 				/>
 				<List
-					title={'40+'}
-					value={'Financial Institutions'}
+					icon='+'
+					title={40}
+					subtitle={'Financial Institutions'}
 				/>
 				<List
-					title={'>200m'}
-					value={'Customers Each'}
+					icon='m<'
+					title={200}
+					subtitle={'Customers Each'}
 				/>
 			</div>
 
@@ -78,14 +86,39 @@ export default function TrustedBySection() {
 	);
 }
 
-function List({ title, value }: { title: string; value: string }) {
+function List({
+	title,
+	subtitle,
+	icon,
+}: {
+	title: number;
+	subtitle: string;
+	icon: string;
+}) {
+	const [value, setValue] = useState(0);
+	const ref = useRef(null);
+	const isInView = useInView(ref);
+
+	if (isInView && value === 0) {
+		setValue(title);
+	}
+
 	return (
 		<div className='flex flex-row lg:flex-col flex-1 items-center justify-between py-6'>
-			<h3 className='text-6xl md:text-7xl font-semibold bg-gradient-to-t from-primary to-primary/70 bg-clip-text text-transparent font-montserrat'>
-				{title}
+			<h3
+				className='text-6xl md:text-7xl font-semibold bg-gradient-to-t from-primary to-primary/70 bg-clip-text text-transparent font-montserrat'
+				ref={ref}>
+				<AnimatedNumber
+					springOptions={{
+						bounce: 0,
+						duration: 1000,
+					}}
+					value={value}
+				/>
+				{icon}
 			</h3>
 			<p className='text-sm font-semibold mt-6 lg:text-base lg:font-normal'>
-				{value}
+				{subtitle}
 			</p>
 		</div>
 	);
