@@ -30,12 +30,16 @@ export default function PhilosolphySection() {
 					alt='Philosophy'
 					layout='responsive'
 					className='md:hidden'
+					placeholder='blur'
+					loading='lazy'
 				/>
 
 				<Image
 					src={FlowChartImg}
 					alt='Philosophy'
 					layout='responsive'
+					placeholder='blur'
+					loading='lazy'
 				/>
 			</div>
 

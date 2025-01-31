@@ -69,6 +69,8 @@ function Card({
 					src={image}
 					alt={title}
 					className='w-full mt-6 lg:mt-0 rounded-xl'
+					placeholder='blur'
+					loading='lazy'
 				/>
 			</div>
 		</div>
