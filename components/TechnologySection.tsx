@@ -8,35 +8,48 @@ import {
 import { technologies } from '@/lib/constants';
 import Image, { StaticImageData } from 'next/image';
 
-// todo: background image
 export default function TechnologySection() {
 	return (
-		<div className='py-[5vmin] container-section'>
-			{/* Header */}
-			<h3 className='text-sm font-bold text-primary/80 text-center font-montserrat uppercase mb-4'>
-				TECHNOLOGY BUILT FOR YOU
-			</h3>
-			<h1 className='text-4xl font-semibold text-center my-2 font-montserrat lg:text-5xl mb-8'>
-				The future of finance
-			</h1>
+		<div className='relative'>
+			<div className='py-[5vmin] container-section'>
+				<svg
+					className='absolute top-0 left-0 -z-10 h-full w-full opacity-5'
+					viewBox='0 0 100 100'
+					preserveAspectRatio='none'
+					style={{
+						clipPath: 'polygon(0 0, 100% 0, 100% 90%, 0% 100%)',
+					}}>
+					<rect
+						fill='#2563eb'
+						width='100'
+						height='100'></rect>
+				</svg>
+				{/* Header */}
+				<h3 className='text-sm font-bold text-primary/80 text-center font-montserrat uppercase mb-4'>
+					TECHNOLOGY BUILT FOR YOU
+				</h3>
+				<h1 className='text-4xl font-semibold text-center my-2 font-montserrat lg:text-5xl mb-8'>
+					The future of finance
+				</h1>
 
-			<div className='w-full overflow-hidden'>
-				<Carousel className='cursor-grab'>
-					<CarouselContent className='gap-4 '>
-						{technologies.map((item, i) => (
-							<CarouselItem key={i}>
-								<Card
-									title={item.title}
-									content={item.content}
-									image={item.image}
-									subtitle={item.subtitle}
-								/>
-							</CarouselItem>
-						))}
-					</CarouselContent>
-					<CarouselPrevious />
-					<CarouselNext />
-				</Carousel>
+				<div className='w-full overflow-hidden'>
+					<Carousel className='cursor-grab'>
+						<CarouselContent className='gap-4 '>
+							{technologies.map((item, i) => (
+								<CarouselItem key={i}>
+									<Card
+										title={item.title}
+										content={item.content}
+										image={item.image}
+										subtitle={item.subtitle}
+									/>
+								</CarouselItem>
+							))}
+						</CarouselContent>
+						<CarouselPrevious />
+						<CarouselNext />
+					</Carousel>
+				</div>
 			</div>
 		</div>
 	);

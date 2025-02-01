@@ -56,7 +56,7 @@ export default function Navbar() {
 						<DropdownMenuTrigger asChild>
 							<Button
 								className={cn(
-									'hidden gap-1 lg:flex rounded-full transition-all ',
+									'hidden gap-1 lg:flex rounded-full transition-all bg-transparent',
 									!isScrolled
 										? 'text-black border-black'
 										: 'text-pretty border-primary',
@@ -80,7 +80,7 @@ export default function Navbar() {
 					variant='outline'
 					size={'lg'}
 					className={cn(
-						'rounded-none hidden lg:flex text-base font-semibold shadow-md tranisition-all',
+						'rounded-none hidden lg:flex text-base font-semibold shadow-md tranisition-all bg-transparent',
 						!isScrolled
 							? 'border-black text-black'
 							: 'border-none text-secondary-foreground bg-secondary hover:bg-secondary hover:gap-3 transition-all hover:text-secondary-foreground hover:shadow-black/30',
