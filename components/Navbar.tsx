@@ -27,7 +27,7 @@ export default function Navbar() {
 	return (
 		<nav
 			className={cn(
-				'fixed w-full z-50 transition-all bg-primary lg:bg-white/0 text-white lg:text-black',
+				'fixed w-full z-50 transition-all bg-primary lg:bg-white/0 text-white',
 				isScrolled &&
 					'text-primary shadow-primary/10 shadow-lg bg-white lg:bg-white lg:text-primary',
 			)}>
@@ -58,7 +58,7 @@ export default function Navbar() {
 								className={cn(
 									'hidden gap-1 lg:flex rounded-full transition-all bg-transparent',
 									!isScrolled
-										? 'text-black border-black'
+										? 'text-white border-white'
 										: 'text-pretty border-primary',
 								)}
 								variant='outline'>
@@ -82,7 +82,7 @@ export default function Navbar() {
 					className={cn(
 						'rounded-none hidden lg:flex text-base font-semibold shadow-md tranisition-all bg-transparent',
 						!isScrolled
-							? 'border-black text-black'
+							? 'border-white text-white'
 							: 'border-none text-secondary-foreground bg-secondary hover:bg-secondary hover:gap-3 transition-all hover:text-secondary-foreground hover:shadow-black/30',
 					)}>
 					Contact Us
